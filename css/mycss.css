@@ -1,0 +1,42 @@
+body{
+   background-image:url("image/background.jpg"); 
+   background-repeat:no-repeat;
+   background-position: center;
+   background-size: cover;
+   
+}
+
+.icon-bar {
+    width: 90px;
+    background-color: #373F27;
+    width: 40%;
+    height:40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 35px;
+    color: #E9E7DA;
+    font-size: 26px;
+    text-decoration:none;
+    font-style:normal;
+    font-weight: bold;
+    letter-spacing:2px;
+    
+}
+
+
+.gif1{
+    float:right;
+    width: 250px;
+    height:250px;
+}
+
+.icon-bar a:hover {
+    background-color: #CDA34F;
+    text-decoration:none;
+}
