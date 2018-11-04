@@ -5,7 +5,7 @@
 ###### Studenti: Alexa Sorina, Antonescu Ioana, Argatu Alexandra, Bucăloiu Alexandru
         
  
-  Bplicaţia pe care ne propunem să o realizăm pune la dispoziţie elemente bazate pe organizarea programului zilnic în viaţa unei persoane.
+  Aplicaţia pe care ne propunem să o realizăm pune la dispoziţie elemente bazate pe organizarea programului zilnic în viaţa unei persoane.
   
   Ideea de la care se porneşte este reprezentată de dorinţa unui stil de viaţă mai bine planificat, care îi permite utilizatorului să-şi programeze task-urile zilnice, săptămânale, lunare în funcţie de dorinţa acestuia. Una dintre opţiunele aplicatiei se refera la accesul un **calendar** care permite adăugarea unor evenimente, întâlniri, programări sociale, formale sau chiar de sănătate în funcţie de ora stabilită de către utilizator.
   
