@@ -25,7 +25,7 @@
 * **Google Now**
 * **Asana**
 
-  Aceastea prezintă opţiuni simlare cu ale interfeţei noastre.
+  Aceastea prezintă opţiuni similare cu ale interfeţei noastre.
   Ele oferă opţiuni suplimentare precum: ataşarea imaginilor, opţiunea de share în vederea lucrului în echipă, posibilitatea de personalizare etc.
   
   
