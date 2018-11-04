@@ -29,7 +29,7 @@
   
 ## Interfețe aplicație
   
-![alt text]() 
+![alt text](https://github.com/ioanant/Proiect-Webtech/blob/master/css/image/interfete.jpg) 
   
   
   
