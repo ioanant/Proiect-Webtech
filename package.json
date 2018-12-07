@@ -1,0 +1,26 @@
+{
+  "name": "appointment_manager",
+  "version": "1.0.0",
+  "description": "Aplicaţia pe care ne propunem să o realizăm pune la dispoziţie elemente bazate pe organizarea programului zilnic în viaţa unei persoane.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "\"echo\"",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ioanant/Proiect-Webtech.git"
+  },
+  "author": "\"antonescuioana\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ioanant/Proiect-Webtech/issues"
+  },
+  "homepage": "https://github.com/ioanant/Proiect-Webtech#readme"
+}
