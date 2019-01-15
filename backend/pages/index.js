@@ -81,7 +81,7 @@ function listEvents(auth) {
       events.map((event, i) => {
         const start = event.start.dateTime;
         console.log(`${start} - ${event.summary}`);
-        // var sql = "INSERT INTO appointments (id,name,data) VALUES ("+(i+10)+","+event.summary+","+start+");";
+        // var sql = "INSERT INTO appointments (id,name,data) VALUES ("+ (i+10) +",'" + event.summary + "','" + start +"');";
         // db.sequelize.query(sql).then(()=> {
         //     console.log("1 record inserted");
         //     }).catch((err)=>{

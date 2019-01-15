@@ -1,7 +1,8 @@
 const express=require('express')
 const app=express()
+const path = require('path')
 const api = require('./backend/route/api')
-//const cors = require("cors")
+const cors = require("cors")
 const Sequelize=require('sequelize')
 
 const sequelize=new Sequelize('proiect_webtech','root','',{
@@ -15,7 +16,7 @@ const sequelize=new Sequelize('proiect_webtech','root','',{
 //     console.log("Can't connect database")
 // })
 app.use('/',express.static('frontend/build'))
-//app.use(cors())
+app.use(cors())
 app.use('/api', api);
 
 const Appointment=sequelize.define('appointment',{
@@ -121,7 +122,9 @@ app.get('/createdatabase',(request,response)=>{
 //     })
 // })
 
-
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/frontend/build/index.html'));
+});
 
 app.listen(8080)
 

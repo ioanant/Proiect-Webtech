@@ -84,7 +84,7 @@
 <script type="text/javascript">
   function showNotes() {
     console.log('listaNotite')
-    axios.get('https://proiect-ioanaantonescu.c9users.io/notes').then(function(results) {
+    axios.get('/notes').then(function(results) {
         let html = `<header>
   <title>Notite</title>
 </header>

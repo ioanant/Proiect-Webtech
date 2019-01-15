@@ -10,7 +10,7 @@ router.get('/appointments/:id', calendarController.findById)
 
 const notesController = require('../controls/NotesController.js')
 
-router.get('https://proiect-ioanaantonescu.c9users.io/notes.html', notesController.findAll)
+router.get('/notes', notesController.findAll)
 router.get('/notes/:id',notesController.findById)
 
 module.exports = router
