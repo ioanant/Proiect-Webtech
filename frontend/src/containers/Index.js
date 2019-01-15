@@ -19,7 +19,7 @@ class Index extends Component {
       <div className="Index" >
       <img src="css/image/calendar.gif" class="gif1"/>
     <div class="icon-bar">
-	<Route path="/calendar/" component={Calendar}><i class="fa fa-calendar"></i>Calendar </Route>
+	<Route path="/appointments/" component={Calendar}><i class="fa fa-calendar"></i>Calendar </Route>
 	<Route path="/notes/" component={Notes}><i class="fa fa-pencil"></i>     Note  </Route>
 	<Route path="/about/" component={About}><i class="fa fa-cogs"></i>      Settings </Route>
 	<Route path="/grafic/" component={Grafic}>	<i class="fa fa-line-chart"></i>     Graphic </Route>

@@ -19,20 +19,13 @@ class Notes extends Component {
         this.setState({notes: result.data.results})
       })
     }
-
+  
     render() {
       return (
-        <div>
-        <h1>Notite</h1>
-       	<br/>
-			<ul>
-       <li>
-      <a href={this.state.notes.map((note) => {note.id})}>
-        {this.state.notes.map((note) => <Note key={note.id} note={note}/>)}
-      </a>
-    </li>
-    </ul>
-       </div>
+      
+        <div class="listaNotite">
+        {this.state.notes.map((note)=> <Note key={note.id} notes={note}/>)}
+        </div>
       )
     }
   }

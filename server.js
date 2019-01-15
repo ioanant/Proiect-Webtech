@@ -2,12 +2,12 @@ const express=require('express')
 const app=express()
 const api = require('./backend/route/api')
 //const cors = require("cors")
-// const Sequelize=require('sequelize')
+const Sequelize=require('sequelize')
 
-// const sequelize=new Sequelize('proiect_webtech','root','',{
-//     dialect:"mysql",
-//     host:"localhost"
-// })
+const sequelize=new Sequelize('proiect_webtech','root','',{
+    dialect:"mysql",
+    host:"localhost"
+})
 
 // sequelize.authenticate().then(()=>{
 //     console.log("Connected to database")
@@ -18,33 +18,33 @@ app.use('/',express.static('frontend/build'))
 //app.use(cors())
 app.use('/api', api);
 
-// const Appointment=sequelize.define('appointment',{
-//      id:{type:Sequelize.INTEGER,primaryKey:true},
-//     name: Sequelize.STRING,
-//     data: Sequelize.DATE,
-//     location:Sequelize.STRING,
-//     domain: Sequelize.STRING
-// })
+const Appointment=sequelize.define('appointment',{
+     id:{type:Sequelize.INTEGER,primaryKey:true},
+    name: Sequelize.STRING,
+    data: Sequelize.DATE,
+    location:Sequelize.STRING,
+    domain: Sequelize.STRING
+})
 
-// const Notes=sequelize.define('notes',{
-//     id:{type:Sequelize.INTEGER,primaryKey:true},
-//     name_note: Sequelize.STRING,
-//     text: Sequelize.TEXT,
-//     deleted: {type:Sequelize.BOOLEAN, defaultValue:false},
-//     done: {type:Sequelize.BOOLEAN, defaultValue:false}
+const Notes=sequelize.define('notes',{
+    id:{type:Sequelize.INTEGER,primaryKey:true},
+    name_note: Sequelize.STRING,
+    text: Sequelize.TEXT,
+    deleted: {type:Sequelize.BOOLEAN, defaultValue:false},
+    done: {type:Sequelize.BOOLEAN, defaultValue:false}
 
-// })
+})
 
 
 
-// app.get('/createdatabase',(request,response)=>{
-//     sequelize.sync({force:true}).then(()=>{
-//         response.status(200).send('tabele create')
-//     }).catch((err) => {
-//         console.log(err)
-//         response.status(200).send('nu s-au creat tabelele')
-//     })
-// })
+app.get('/createdatabase',(request,response)=>{
+    sequelize.sync({force:true}).then(()=>{
+        response.status(200).send('tabele create')
+    }).catch((err) => {
+        console.log(err)
+        response.status(200).send('nu s-au creat tabelele')
+    })
+})
 
 
 
