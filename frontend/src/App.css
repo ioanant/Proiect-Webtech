@@ -1,8 +1,13 @@
+
 body{
+  height: 100%;
+}
+#root{
    background-image:url("./background2.jpg"); 
-   background-repeat:no-repeat;
+   background-repeat:repeat;
    background-position: center;
-   background-size: 100%;
+   height: 100%;
+   background-size:cover;
    
 }
 
@@ -39,7 +44,7 @@ body{
     text-decoration:none;
 }
 h2,p{
-  font-size:100%;
+  font-size:20px;
   font-weight:normal;
 }
 ul,li{
@@ -71,11 +76,11 @@ ul li{
 ul li h2{
   font-size:140%;
   font-weight:bold;
-  padding-bottom:10px;
+  padding-bottom:5px;
 }
 ul li p{
   font-family:"Reenie Beanie",arial,sans-serif;
-  font-size:180%;
+  font-size:25px;
 }
 ul li a{
   -webkit-transform: rotate(-6deg);
@@ -125,6 +130,7 @@ ol li a{color:#fff;}
   font-size: 30px;
   font-weight: bold;
   font-family: "Comic Sans MS";
+  padding: center;
   color: #333300;
 }
 
@@ -133,6 +139,13 @@ ol li a{color:#fff;}
   font-family:"Georgia";
   text-align: center;
 }
+
+
+#list2 { align:center;}
+#list2 ol { font-style:italic; font-family:Georgia, Times, serif; font-size:24px; color:black;  }
+#list2 ol li { }
+#list2 ol li p { padding:center; font-style:normal; font-family:Arial; font-size:15px; color:black; border-left: 1px solid #999; }
+#list2 ol li p em { display:center; }
 
 .infoDespre{
   font-family: "Georgia";

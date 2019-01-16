@@ -17,8 +17,10 @@ module.exports.findAll = (req, res,next) => {
 
  
 module.exports.findById = (req, res,next) => {
+    console.log(request);
     db.notes.findById(req.params.id).then(
         (result) => {
+            console.log(result);
             if(result) {
                 res.status(200).send(result)
             } else {

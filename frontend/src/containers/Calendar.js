@@ -1,32 +1,52 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-const API_BASE_URL = 'https://proiectfinal-ioanaantonescu.c9users.io'
+import Appointment from '../component/Appointment'
+const API_BASE_URL = 'https://proiectfinal-ioanaantonescu.c9users.io/api'
+
 
 class Calendar extends Component {
+     constructor(props) {
+      super(props)
+      this.state = {
+        appointments: []
+      };
+    
+    }
+    
+   componentDidMount() {
+      axios.get(API_BASE_URL + '/appointments').then((result) => {
+        console.log(result);
+        this.setState({appointments: result.data.results})
+      }).catch((err)=>
+         console.log(err)
+         )
+    }  
+    
 
   render() {
     return (
+        
+        <div>
           <div class="calendar">
-    <h3 align="center">ADD AN EVENT</h3>
+    <h3 align="center" class="titluDespre">ADD AN EVENT</h3>
 <table align="center" cellpadding = "10">
 <tr>
 <td>EVENT NAME</td>
-<td><input type="text" id="name" name="First_Name" maxlength="30"/>
+<td><input type="text" id="name" name="name" maxlength="30"/>
 (max 30 characters a-z and A-Z)
 </td>
 </tr>
 
 <tr>
 <td>EVENT LOCATION</td>
-<td><input type="text" id="location" name="Location" maxlength="30"/>
+<td><input type="text" id="location" name="location" maxlength="30" />
 (max 30 characters a-z and A-Z)
 </td>
 </tr>
  
  <tr>
 <td>EVENT DOMAIN</td>
-<td><input type="text" id="domain" name="Location" maxlength="30"/>
-(max 30 characters a-z and A-Z)
+<td><input type="text" id="domain" name="domain" maxlength="30"/>
 </td>
 </tr>
 
@@ -34,7 +54,7 @@ class Calendar extends Component {
 <td>EVENT DATE</td>
  
 <td>
-<select name="Event_Day" id="date_day">
+<select id="Event_Day"name="date_day">
 <option value="-1">Day:</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -75,18 +95,18 @@ class Calendar extends Component {
  
 <select id="Event_Month" name="date_month">
 <option value="-1">Month:</option>
-<option value="January">Jan</option>
-<option value="February">Feb</option>
-<option value="March">Mar</option>
-<option value="April">Apr</option>
-<option value="May">May</option>
-<option value="June">Jun</option>
-<option value="July">Jul</option>
-<option value="August">Aug</option>
-<option value="September">Sep</option>
-<option value="October">Oct</option>
-<option value="November">Nov</option>
-<option value="December">Dec</option>
+<option value="January">01</option>
+<option value="February">02</option>
+<option value="March">03</option>
+<option value="April">04</option>
+<option value="May">05</option>
+<option value="June">06</option>
+<option value="July">07</option>
+<option value="August">08</option>
+<option value="September">09</option>
+<option value="October">10</option>
+<option value="November">11</option>
+<option value="December">12</option>
 </select>
  
 <select name="Event_Year" id="date_year">
@@ -133,11 +153,20 @@ class Calendar extends Component {
 
 <tr>
 <td colspan="2" align="center">
-<input type="submit" value="Submit" onClick={this.saveMessage}/>
+<input type="submit" value="Submit"/>
 <input type="reset" value="Reset"/>
 </td>
 </tr>
 </table>
+</div>
+
+
+<div id="list2" align="center">
+   <ol>
+   {this.state.appointments && this.state.appointments.map((appointment) => <Appointment key={appointment.id} appointments={appointment}/>)}
+   </ol>
+</div>
+
 </div>
 
     );
