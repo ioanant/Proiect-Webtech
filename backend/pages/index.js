@@ -2,7 +2,9 @@ const Sequelize= require('sequelize');
 const db={};
 const dbConfig= require("../config/proiect_webtech.json");
 const fs = require('fs');
+const path = require('path');
 const readline = require('readline');
+const basename = path.basename(module.filename);
 const {google} = require('googleapis');
 const TOKEN_PATH = 'token.json';
 const SCOPES = ['https://www.googleapis.com/auth/calendar.readonly'];
@@ -12,13 +14,25 @@ const sequelize= new Sequelize(dbConfig.database,dbConfig.username,dbConfig.pass
     host:dbConfig.host,
     operatorsAliases: false
 })
+
+fs
+  .readdirSync(__dirname)
+  .filter((file) => {
+    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
+  })
+  .forEach((file) => {
+    const model = sequelize['import'](path.join(__dirname, file));
+    db[model.name] = model;
+  });
+  
+  
 Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
 });
 
-fs.readFile('./backend/route/credentials.json', (err, content) => {
+fs.readFile('./backend/route/google/credentials.json', (err, content) => {
   if (err) return console.log('Error loading client secret file:', err);
   // Authorize a client with credentials, then call the Google Calendar API.
   authorize(JSON.parse(content), listEvents);
@@ -61,10 +75,6 @@ function getAccessToken(oAuth2Client, callback) {
   });
 }
 
-/**
- * Lists the next 10 events on the user's primary calendar.
- * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
- */
 function listEvents(auth) {
   const calendar = google.calendar({version: 'v3', auth});
   calendar.events.list({
@@ -93,6 +103,7 @@ function listEvents(auth) {
     }
       });
   
+}
 
 sequelize.authenticate().then(() => {
 			console.log('Conectiunea s-a stabilit cu succes');
@@ -106,9 +117,8 @@ sequelize.authenticate().then(() => {
 db.sequelize=sequelize;
 db.Sequelize=Sequelize;
 
-db.Calandar=require('./Calendar')(sequelize,Sequelize);
+db.Calendar=require('./Calendar')(sequelize,Sequelize);
 db.Notes=require('./Notes')(sequelize,Sequelize);
 
 
 module.exports=db;
-}

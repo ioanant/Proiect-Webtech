@@ -6,5 +6,5 @@ module.exports = function(sequelize, DataTypes) {
     deleted: {type:DataTypes.BOOLEAN, defaultValue:false},
     done: {type:DataTypes.BOOLEAN, defaultValue:false}
     })
-    return Notes;
+   return Notes;
 }

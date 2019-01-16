@@ -118,3 +118,24 @@ ul li a:hover,ul li a:focus{
 ol{text-align:center;}
 ol li{display:inline;padding-right:1em;}
 ol li a{color:#fff;}
+
+
+.titluDespre{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Comic Sans MS";
+  color: #333300;
+}
+
+.despre{
+  font-size: 20px;
+  font-family:"Georgia";
+  text-align: center;
+}
+
+.infoDespre{
+  font-family: "Georgia";
+  font-size:15px;
+  float:left;
+}

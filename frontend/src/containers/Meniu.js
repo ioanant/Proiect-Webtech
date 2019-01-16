@@ -14,12 +14,11 @@ const styles = theme => ({
 
 
 class Menu extends React.Component {
-
-     constructor(props) {
+    constructor(props) {
     super(props)
 
-    let pages = ['/appointments', '/notes', '/about', '/grafic'];
-    let labels = ['Calendar', 'Notes', 'About', 'Grafic']
+    let pages = ['/appointments', '/notes', '/about'];
+    let labels = ['Calendar', 'Notes', 'About']
 
     let pathname = this.props.location.pathname
     pathname = pathname[pathname.length - 1] !== '/' ? pathname : pathname.substr(0, pathname.length - 1)
@@ -37,23 +36,14 @@ class Menu extends React.Component {
     this.props.history.push(this.state.pages[value])
   };
  render(){
+    const { classes } = this.props;
     const { value } = this.state;
-    return (
-//   <div class="icon-bar">
-//   <div>
-//     <Route path="/appointments" exact component={Calendar}/><p onChange={this.handleChange}><i class="fa fa-calendar"></i>    Calendar</p>
-// 	 <Route path="/notes" exact component={Notes}/><p><i class="fa fa-pencil"></i>     Note</p>
-// 	 <Route path="/about" exact component={About}/><p><i class="fa fa-cogs"></i>      About</p>
-//      <Route path="/grafic" exact component={Grafic}/><p><i class="fa fa-line-chart"></i>     Graphic</p>
-//      </div>
-// 	</div>
-      
-      <div class="icon-bar">
+    return(
+    <div class="icon-bar">
 	  <a href="/appointments"><i class="fa fa-calendar"></i>    Calendar</a>
 	  <a href="/notes"><i class="fa fa-pencil"></i>     Note</a>
 	  <a href="/about"><i class="fa fa-about"></i>    About</a>
-	  <a href="/grafic"><i class="fa fa-line-chart"></i>     Graphic</a>
-       </div>
+      </div>
 
 	)
  }

@@ -1,24 +1,29 @@
-var db = require("../pages/index");
+var db = require('../pages/index');
 
-module.exports.findAll=(request,response)=>{
-    db.Notes.findAll().then((notes)=>{
-        response.status(200).send(notes)
-        console.log('S-au gasit notie')
+module.exports.findAll = (req, res,next) => {
+    db.notes.findAll().then(
+           (results) => {
+               res.status(200).send({
+                   status: "success",
+                   results: results
+               });
+           }
+       ).catch(() => {
+           res.status(500).send({
+               status: "error"
+           })
+       })
+};
+
+ 
+module.exports.findById = (req, res,next) => {
+    db.notes.findById(req.params.id).then(
+        (result) => {
+            if(result) {
+                res.status(200).send(result)
+            } else {
+                res.status(404).send()
+            }
+        }
+    )
 }
-).catch(()=>{
-    response.status(400).send("nu s-au gasit notite");
-    })
-};
-
-module.exports.findById=(request,response)=>{
-     db.Notes.findById(request.params.id).then((notes)=>{
-        if(notes){
-            response.status(200).send(notes)
-        }
-        else{
-            response.status(404).send("nu s-a putut selecta notita. Introduceti id-ul corect")
-        }
-        })
-};
-    
-

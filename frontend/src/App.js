@@ -4,7 +4,6 @@ import './App.css';
 
 import Notes from './containers/Notes'
 import Calendar from './containers/Calendar'
-import Grafic from './containers/Grafic'
 import About from './containers/About'
 import Menu from './containers/Meniu'
 
@@ -23,10 +22,9 @@ class App extends Component {
         <div>
             <Menu />
             <div style={{padding:'10px'}}>
-              <Route path="/appointments" exact component={Calendar} />
-              <Route path="/notes/" component={Notes} />
-              <Route path="/about/" component={About} />
-              <Route path="/grafic/" component={Grafic} />
+              <Route path="/appointments/" exact component={Calendar} />
+              <Route path="/notes/"  component={Notes} />
+              <Route path="/about/"  component={About} />
             </div>
             </div>
         </Router>

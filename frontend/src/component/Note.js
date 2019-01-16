@@ -8,15 +8,15 @@ class Note extends Component {
       return (
         
         <li>
-        <a href={notes.id}>
+        <a href='#'>
         <h2>{notes.name_note}</h2>
         <p>{notes.text}</p>
       </a>
     </li>
     
     
-      )  
+      );  
     }
   }
 
-  export default Note
+  export default Note;

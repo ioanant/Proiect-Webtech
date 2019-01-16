@@ -1,7 +1,7 @@
 var db=require("../pages/index");
 
 module.exports.findAll=(request,response)=>{
-    db.Calendar().findAll.then((appointment)=>{
+    db.appointments.findAll().then((appointment)=>{
         response.status(200).send(appointment);
 }
 ).catch((err)=>{
@@ -10,7 +10,7 @@ module.exports.findAll=(request,response)=>{
 };
 
 module.exports.findById=(request,response)=>{
-    db.Calendar().findById(request.params.id).then((appointment)=>{
+    db.appointments.findById(request.params.id).then((appointment)=>{
         if(appointment){
             response.status(200).send(appointment)
         }

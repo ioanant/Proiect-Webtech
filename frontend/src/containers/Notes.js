@@ -7,16 +7,16 @@ const API_BASE_URL = 'https://proiectfinal-ioanaantonescu.c9users.io'
 
 class Notes extends Component {
     constructor(props) {
-      super(props) 
+      super(props); 
       this.state = {
         notes: []
-      }
+      };
     }
 
     componentDidMount() {
       axios.get(API_BASE_URL + '/notes').then((result) => {
-        this.setState({notes: result.data.results})
-      })
+        this.setState({notes: result.data.results});
+      });
     }
   
     render() {
@@ -37,11 +37,11 @@ class Notes extends Component {
         <div class="listaNotite">
         <h1>Notite</h1>
       	<ul>
-       {this.state.contacts &&this.state.notes.map((note) => <Note key={note.id} notes={note}/>)}
-       </ul>
-       </div>
-   )
+      {this.state.notes && this.state.notes.map((note) => <Note key={note.id} notes={note}/>)}
+      </ul>
+      </div>
+  );
   }
 }
 
-export default Notes
+export default Notes;

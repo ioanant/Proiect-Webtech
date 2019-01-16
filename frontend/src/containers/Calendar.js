@@ -3,35 +3,7 @@ import axios from 'axios'
 const API_BASE_URL = 'https://proiectfinal-ioanaantonescu.c9users.io'
 
 class Calendar extends Component {
-//     saveMessage(event) {
-//     event.preventDefault()
 
-//     let id = 
-//     let name = $('#name').val()
-//     let dataDay = $('#data_day').val()
-//     let dataYear = $('#data_year').val()
-//     let dataMonth = $('#data_month').val()
-          
-//     let location = $('#location').val()
-//     let domain = $('#domain').val()
-    
-    
-//     axios.post(API_BASE_URL+'/appointments', {
-//     name: name,
-//     data:dataYear+"-"+dataMonth+"-"+dataDay,
-//     location:location,
-//     domain:domain
-//     }).then(function(result) {
-//     console.log('S-a adaugat o noua inregistare')
-//     //showMessages()
-// }).catch(function(){
-//     alert('Resource could not be saved')
-// })
-// }
-
-// hello(){
-//     console.log('hello');
-// }
   render() {
     return (
           <div class="calendar">
